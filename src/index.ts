@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import studentRoute from "./routes/sudent.route";
 
 dotenv.config();
 
@@ -21,8 +22,10 @@ const connectToDatabase = async () => {
 };
 
 app.get("/", (req, res) => {
-  res.send("Welcome");
+  res.send("Welcome ");
 });
+
+app.use("/student/api", studentRoute);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port} at ${timestamp}`);

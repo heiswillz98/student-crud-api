@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import studentRoute from "./routes/sudent.route";
+import studentRoute from "./routes/student.route";
 
 dotenv.config();
 
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   res.send("Welcome ");
 });
 
-app.use("/student/api", studentRoute);
+app.use("/api/v1", studentRoute);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port} at ${timestamp}`);

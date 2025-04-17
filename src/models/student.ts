@@ -13,6 +13,7 @@ const StudentSchema: Schema = new Schema(
     email: { type: String, required: true, unique: true },
     age: { type: Number, required: true },
     enrolled: { type: Boolean, default: true },
+    course: { type: String, default: "Undeclared" },
   },
   { timestamps: true }
 );

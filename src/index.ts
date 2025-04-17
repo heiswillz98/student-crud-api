@@ -1,7 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import studentRoute from "./routes/student.route";
-import { connectToDatabase } from "./config/db";
+import connectToPostgresDatabase from "./config/studentdb";
+// import { connectToDatabase } from "./config/db";
 
 dotenv.config();
 
@@ -17,7 +18,12 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1", studentRoute);
 
+// if (process.env.NODE_ENV !== "test") {
 app.listen(port, () => {
   console.log(`Server is running on port ${port} at ${timestamp}`);
-  connectToDatabase();
+  connectToPostgresDatabase();
+  // connectToDatabase();
 });
+// }
+
+export default app;

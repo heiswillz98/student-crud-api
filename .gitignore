@@ -4,4 +4,7 @@ dist
 .env
 Dockerfile
 k8s
+# Ignore log files
+logs/
+*.log
 StudentApi.postman_collection.json
